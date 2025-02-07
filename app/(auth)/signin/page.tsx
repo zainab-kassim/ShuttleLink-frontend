@@ -20,13 +20,17 @@ const SignIn = () => {
             const { message, userId, role, user_email, firstname } = res.data
             localStorage.setItem('role', role);
             localStorage.setItem('useremail', user_email);
-            localStorage.setItem('firsstname', firstname);
+            localStorage.setItem('firstname', firstname);
+            localStorage.setItem('userId', userId);
+            
+
 
             console.log(message)
 
             // Handle login (e.g., store token, redirect user)
-        } catch (error: any) {
-            console.error('Error:', error.response?.data?.message || 'Something went wrong');
+        } catch(error){
+            console.log(error)
+            
         } finally {
             setLoading(false);
         }
@@ -36,7 +40,7 @@ const SignIn = () => {
         <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
             <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-md">
                 <h2 className="mb-4 text-center text-2xl font-semibold">Sign In</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 text-black">
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Email</label>
                         <input
