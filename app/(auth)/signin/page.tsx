@@ -2,11 +2,13 @@
 
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    const router = useRouter()
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,6 +24,12 @@ const SignIn = () => {
             localStorage.setItem('email', user_email);
             localStorage.setItem('firstname', firstname);
             localStorage.setItem('userId', userId);
+
+            if(role === 'driver'){
+                router.push('/role/driver')
+            }else{
+                router.push('/role/passenger')
+            }
         
             console.log(res.data.message)
 
