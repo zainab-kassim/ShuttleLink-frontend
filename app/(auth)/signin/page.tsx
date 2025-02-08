@@ -19,7 +19,7 @@ const SignIn = () => {
             });
             const { message, userId, role, user_email, firstname } = res.data
             localStorage.setItem('role', role);
-            localStorage.setItem('useremail', user_email);
+            localStorage.setItem('email', user_email);
             localStorage.setItem('firstname', firstname);
             localStorage.setItem('userId', userId);
         
