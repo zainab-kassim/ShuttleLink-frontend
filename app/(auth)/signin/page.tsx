@@ -22,15 +22,12 @@ const SignIn = () => {
             localStorage.setItem('useremail', user_email);
             localStorage.setItem('firstname', firstname);
             localStorage.setItem('userId', userId);
-            
-
-
-            console.log(message)
+        
+            console.log(res.data.message)
 
             // Handle login (e.g., store token, redirect user)
         } catch(error){
             console.log(error)
-            
         } finally {
             setLoading(false);
         }
