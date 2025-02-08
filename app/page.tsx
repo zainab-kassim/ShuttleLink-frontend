@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
-import { useState } from "react"
+
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       router.push('/role/passenger')
     }
   }, [])
-  
+
   return (
     <div>home page</div>
   )
