@@ -1,5 +1,7 @@
 "use client";
 import { ChangeEvent, FormEvent, useState } from "react";
+import axios from "axios";
+
 
 const bookride = () => {
   const [formData, setFormData] = useState({
@@ -7,13 +9,21 @@ const bookride = () => {
     destination: "",
   });
 
-  const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Ride Details:", formData);
+    try {
+      const response = await axios.post("http://localhost:3000/ride/book-ride",{
+        pickupLocation: formData.pickupLocation,
+        destination: formData.destination,
+      });
+      console.log("Ride booked successfully:", response.data);
+    } catch (error) {
+      console.error("Error booking ride:", error);
+    }
   };
 
   return (
@@ -38,7 +48,7 @@ const bookride = () => {
           required
           className="w-full p-2 border rounded"
         />
-    
+
         <button
           type="submit"
           className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
