@@ -1,7 +1,7 @@
-'use client'
 import type { Metadata } from "next";
 import "./globals.css";
-import { useSocket } from "../Hooks/UseSocket";
+import { SocketProvider } from "./socketProvider";
+
 
 
 
@@ -16,11 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  useSocket();
+
   return (
     <html lang="en">
       <body>
+        <SocketProvider>
         {children}
+        </SocketProvider>
       </body>
     </html>
   );
