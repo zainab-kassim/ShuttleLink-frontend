@@ -88,7 +88,7 @@ const Page = () => {
     const role = localStorage.getItem("role");
     try {
       if (role === "driver" && userId && rideRequests) {
-        const response = await axios.post("http://localhost:4000/api/ride/ride-accepted", {
+        const response = await axios.post("https://shuttlelink-backend.onrender.com/api/ride/ride-accepted", {
           rideId: rideRequests._id,
           userId,
           passengerId: rideRequests.passenger._id
