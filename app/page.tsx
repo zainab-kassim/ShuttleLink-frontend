@@ -6,9 +6,10 @@ import { useEffect } from "react"
 
 export default function Home() {
   const router = useRouter()
-  const role = localStorage.getItem('role')
+  
 
   useEffect(() => {
+    const role = localStorage.getItem('role')
     if (role === 'driver') {
       router.push('/role/driver')
     } else if (role === "passenger") {
