@@ -6,7 +6,7 @@ import { useSocket } from "../../../../../Hooks/UseSocket"; // Import your socke
 import icon1 from '../../../../../public/suttle link icon.jpg'
 import Image from "next/image";
 
-const bookride = () => {
+const Bookride = () => {
   type RideDataType = {
     _id: string;
     passenger: {
@@ -151,4 +151,4 @@ const bookride = () => {
   );
 };
 
-export default bookride;
+export default Bookride;

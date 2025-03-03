@@ -7,7 +7,7 @@ import { useSocket } from "../../../../Hooks/UseSocket"; // Import your socket h
 
 
 
-const page = () => {
+const Page = () => {
   type RideDataType = {
     _id: string;
     passenger: {
@@ -154,4 +154,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -4,7 +4,6 @@ import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import icon1 from '../../../public/suttle link icon.jpg'
-import icon2 from '../../../public/suttle_link_icon-removebg-preview.png'
 import Image from 'next/image';
 
 const SignIn = () => {
@@ -24,7 +23,7 @@ const SignIn = () => {
             }, {
                 withCredentials: true // 🔥 Allows sending & receiving cookies
             });
-            const { message, userId, role, user_email, firstname } = res.data
+            const {  userId, role, user_email, firstname } = res.data
             localStorage.setItem('role', role);
             localStorage.setItem('email', user_email);
             localStorage.setItem('firstname', firstname);

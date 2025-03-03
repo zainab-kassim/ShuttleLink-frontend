@@ -14,7 +14,7 @@ export default function Home() {
     } else if (role === "passenger") {
       router.push('/role/passenger')
     }
-  }, [])
+  },[])
 
   return (
     <div>home page</div>
