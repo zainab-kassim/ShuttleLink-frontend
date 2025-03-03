@@ -100,7 +100,7 @@ const Bookride = () => {
       <div className='w-full max-w-md p-6'>
           <div className='p-4 rounded-md border bg-slate-50 text-black'>
             <p className='text-black mb-2'>Driver: {RideData.passenger.firstname}</p>
-            <p className='text-black mb-2'>Driver's Phonenumber: {RideData.passenger.phoneNumber}</p>
+            <p className='text-black mb-2'>Driver&apos;s s Phonenumber: {RideData.passenger.phoneNumber}</p>
             <p className='text-black mb-2'>Pickup: {RideData.pickupLocation}</p>
             <p className='text-black mb-2'>Destination: {RideData.destination}</p>
             <p className='text-black mb-2'>Status: {RideData.status}</p>

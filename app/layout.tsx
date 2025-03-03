@@ -1,10 +1,11 @@
+'use client'
 import type { Metadata } from "next";
 import "./globals.css";
 import { useSocket } from "../Hooks/UseSocket";
 
 
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Shuttle Link",
   description: "transportation service website",
 };
