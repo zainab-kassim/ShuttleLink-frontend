@@ -8,6 +8,7 @@ import { SocketProvider } from "./socketProvider";
 export const metadata: Metadata = {
   title: "Shuttle Link",
   description: "transportation service website",
+  manifest: '/web.manifest.json'
 };
 
 export default function RootLayout({

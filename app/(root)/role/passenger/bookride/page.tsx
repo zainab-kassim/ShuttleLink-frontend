@@ -45,21 +45,6 @@ const Bookride = () => {
   });
 
 
-  useEffect(() => {
-    if (!socket) return;
-
-    // Listening
-    socket.on("ride_accepted", (updatedRide) => {
-      console.log("ride accepted to passenger", updatedRide);
-      setRideData(updatedRide)
-    });
-
-    return () => {
-      socket.off("ride_accepted"); // Cleanup on unmount
-    };
-  }, [socket]);
-
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -80,12 +65,13 @@ const Bookride = () => {
     }
   };
 
+  
   useEffect(() => {
     if (!socket) return;
 
     // Listening
     socket.on("ride_accepted", (updatedRide) => {
-      console.log("ride accepted", updatedRide);
+      console.log("ride accepted to passenger", updatedRide);
       setRideData(updatedRide)
     });
 
@@ -93,6 +79,7 @@ const Bookride = () => {
       socket.off("ride_accepted"); // Cleanup on unmount
     };
   }, [socket]);
+
 
   return (
     <div className=" text-black flex items-center p-5 border rounded-lg shadow-lg min-h-screen bg-white justify-center">

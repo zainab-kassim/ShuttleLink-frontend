@@ -61,7 +61,6 @@ const Page = () => {
     console.log('driver page')
     if (!socket) return;
 
-
     // Listen for new ride requests
     socket.on("new_ride_request", (rideData) => {
       console.log("New ride request:", rideData);
@@ -69,11 +68,10 @@ const Page = () => {
     });
 
     socket.on("ride_accepted", (updatedRide) => {
+      console.log('hi')
       console.log("accepted ride info: ", updatedRide);
       setUpdatedRideData(updatedRide)
     });
-
-
 
     return () => {
       socket.off("new_ride_request"); // Cleanup on unmount
@@ -103,8 +101,6 @@ const Page = () => {
     } finally {
       setLoading(false);
     }
-
-
   };
 
 
