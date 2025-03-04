@@ -14,6 +14,8 @@ export default function Home() {
       router.push('/role/driver')
     } else if (role === "passenger") {
       router.push('/role/passenger')
+    }else{
+      router.push('/signin')
     }
   },[])
 
