@@ -61,7 +61,7 @@ const Page = () => {
     console.log('driver page')
     if (!socket) return;
   console.log('listening for ride requests')
-
+  
     // Listen for new ride requests
     socket.on("new_ride_request", (rideData) => {
       console.log("New ride request:", rideData);
@@ -82,6 +82,7 @@ const Page = () => {
 
   // Function to accept a ride
   async function acceptRide() {
+    setLoading(true)
     const userId = localStorage.getItem("userId"); // Get driver ID from storage
     const role = localStorage.getItem("role");
     try {
