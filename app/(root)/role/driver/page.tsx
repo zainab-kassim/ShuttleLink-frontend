@@ -61,17 +61,17 @@ const Page = () => {
     console.log('driver page')
     if (!socket) return;
   console.log('listening for ride requests')
+
     // Listen for new ride requests
     socket.on("new_ride_request", (rideData) => {
       console.log("New ride request:", rideData);
       setRideRequests(rideData)
     });
 
-    socket.on("ride_accepted", (updatedRide) => {
-      console.log('hi')
-      console.log("accepted ride info: ", updatedRide);
-      setUpdatedRideData(updatedRide)
-    });
+    // socket.on("ride_accepted", (text) => {
+    //   console.log('hi')
+    //   console.log("accepted ride info: ", text);
+    // });
 
     return () => {
       socket.off("new_ride_request"); // Cleanup on unmount
@@ -95,7 +95,8 @@ const Page = () => {
           withCredentials: true // 🔥 Allows sending & receiving cookies
         });
 
-        console.log(response.data.message, response.data.status, response.data.updatedRide);
+        console.log(response.data.message, response.data.status);
+        setUpdatedRideData(response.data.updatedRide)
       };
     } catch (error) {
       console.log(error)
