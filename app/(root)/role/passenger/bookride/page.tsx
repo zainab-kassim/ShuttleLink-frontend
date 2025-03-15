@@ -23,7 +23,7 @@ const Bookride = () => {
       firstname: string;
       lastname: string;
       email: string;
-      phoneNumber: string;
+      phonenumber: string;
       role: string;
       createdAt: string;
     };
@@ -70,9 +70,9 @@ const Bookride = () => {
     if (!socket) return;
 
     // Listening
-    socket.on("ride_accepted", (updatedRide) => {
-      console.log("ride accepted to passenger", updatedRide);
-      setRideData(updatedRide)
+    socket.on("ride_accepted", (PassengerUpdatedRide) => {
+      console.log("ride accepted to passenger", PassengerUpdatedRide);
+      setRideData(PassengerUpdatedRide)
     });
 
     return () => {
@@ -87,7 +87,7 @@ const Bookride = () => {
       <div className='w-full max-w-md p-6'>
           <div className='p-4 rounded-md border bg-slate-50 text-black'>
             <p className='text-black mb-2'>Driver: {RideData.driver.firstname}</p>
-            <p className='text-black mb-2'>Driver&apos;s s Phonenumber: {RideData.driver.phoneNumber}</p>
+            <p className='text-black mb-2'>Driver&apos;s s Phonenumber: {RideData.driver.phonenumber}</p>
             <p className='text-black mb-2'>Pickup: {RideData.pickupLocation}</p>
             <p className='text-black mb-2'>Destination: {RideData.destination}</p>
             <p className='text-black mb-2'>Status: {RideData.status}</p>
