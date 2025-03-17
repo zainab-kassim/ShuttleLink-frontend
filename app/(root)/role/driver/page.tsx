@@ -86,11 +86,12 @@ const Page = () => {
     const userId = localStorage.getItem("userId"); // Get driver ID from storage
     const role = localStorage.getItem("role");
     try {
+      console.log(userId)
       console.log('trigerred')
       if (role === "driver" && userId && rideRequests) {
         const response = await axios.post("https://shuttlelink-backend.onrender.com/api/ride/ride-accepted", {
           rideId: rideRequests._id,
-          userId,
+          userId:userId,
           passengerId: rideRequests.passenger._id
         }, {
           withCredentials: true // 🔥 Allows sending & receiving cookies
