@@ -3,7 +3,8 @@
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import icon1 from '../../../public/suttle link icon.jpg'
+import icon1 from '../../../public/shuttlelinkicon.jpg'
+
 import Image from 'next/image';
 
 const SignIn = () => {

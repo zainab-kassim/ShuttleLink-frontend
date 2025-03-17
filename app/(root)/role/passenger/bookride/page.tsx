@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useSocket } from "../../../../../Hooks/UseSocket"; // Import your socket hook
-import icon1 from '../../../../../public/suttle link icon.jpg'
+import icon1 from '../../../../../public/shuttlelinkicon.jpg'
 import Image from "next/image";
 
 const Bookride = () => {
