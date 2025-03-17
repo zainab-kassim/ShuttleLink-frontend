@@ -97,7 +97,7 @@ const Page = () => {
           withCredentials: true // 🔥 Allows sending & receiving cookies
         });
 
-        console.log(response.data.message, response.data.status);
+        console.log(response.data.message, response.data.status,response.data.updatedRide);
         setUpdatedRideData(response.data.updatedRide)
       };
     } catch (error) {
